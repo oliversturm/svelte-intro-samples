@@ -1,0 +1,71 @@
+<script>
+  import { createEventDispatcher } from 'svelte';
+  import SearchIcon from './SearchIcon.svelte';
+
+  const dispatch = createEventDispatcher();
+
+  export let text = '';
+
+  const search = () => {
+    if (text) dispatch('search', { text });
+  };
+
+  const onKeypress = (e) => {
+    if (e.key === 'Enter') search();
+  };
+</script>
+
+<div class="outer">
+  <div class="icon"><SearchIcon /></div>
+  <input
+    type="text"
+    placeholder="Search for something..."
+    bind:value={text}
+    on:keypress={onKeypress}
+  />
+  <button disabled={!text} on:click={search}>Search</button>
+</div>
+
+<style>
+  .outer {
+    display: flex;
+    flex-direction: row;
+    width: 20rem;
+    border-radius: 0.375rem;
+  }
+  .icon {
+    display: inline-flex;
+    color: gray;
+    background-color: #fbd9fc;
+    width: 2rem;
+    padding: 0.125rem;
+    border-top-left-radius: 0.375rem;
+    border-bottom-left-radius: 0.375rem;
+    border: 1px solid #ccc;
+  }
+  input {
+    flex: 1 1 0%;
+    display: block;
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0px;
+    font-size: small;
+    margin: 0px;
+  }
+  input:focus {
+    outline: none;
+  }
+  button {
+    background-color: #fbd9fc;
+    font-size: small;
+    margin: 0px;
+    border-top-left-radius: 0rem;
+    border-bottom-left-radius: 0rem;
+    border-top-right-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+  }
+  button:disabled {
+    background-color: lightgray;
+  }
+</style>
