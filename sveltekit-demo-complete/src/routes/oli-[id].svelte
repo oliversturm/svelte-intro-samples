@@ -1,9 +1,5 @@
 <script context="module">
-	export function load({
-		page: {
-			params: { id: loadId }
-		}
-	}) {
+	export function load({ params: { id: loadId } }) {
 		return { props: { loadId } };
 	}
 </script>
