@@ -9,5 +9,5 @@ export async function get() {
 		.then(({ items }) => items)
 		.then((items) => items.map((i) => ({ title: i.title, url: i.media.m })));
 
-	return { body: fetchResult };
+	return { body: { fetchResult } };
 }

@@ -1,4 +1,4 @@
-<script context="module">
+<!-- <script context="module">
 	export function load({ fetch }) {
 		// const fetchResult = fetch(
 		// 	'http://outlier.oliversturm.com:1234/https://www.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=?&tags=hifi'
@@ -11,8 +11,7 @@
 		const fetchResult = fetch('/hifi-images.json').then((res) => res.json());
 		return { props: { fetchResult } };
 	}
-</script>
-
+</script> -->
 <script>
 	import Overview from '$lib/Overview.svelte';
 
