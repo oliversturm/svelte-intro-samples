@@ -8,11 +8,6 @@
     stiffness: 0.01,
     damping: 0.2,
   });
-
-  let myEditorWidth;
-  editorWidth.subscribe((newEditorWidth) => {
-    myEditorWidth = newEditorWidth;
-  });
 </script>
 
 <main>
@@ -30,7 +25,7 @@
       }}
     />
     <div class="widthindicator" style="width:{$editorWidth}px;">
-      Width: {myEditorWidth} ({$editorWidth})
+      Width indicator
     </div>
   </div>
 

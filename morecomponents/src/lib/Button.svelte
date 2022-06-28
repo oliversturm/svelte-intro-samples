@@ -18,11 +18,6 @@
     },
   };
 
-  //let activeType;
-  // function calcType(innerType) {
-  //   // berechnen von activeType aus innerType
-  // }
-  // $: activeType2 = calcType(type)
   $: activeType = type && types[type] ? types[type] : type;
   $: styles = `${activeType.margins || ''}${activeType.text || ''}${
     activeType.border || ''
