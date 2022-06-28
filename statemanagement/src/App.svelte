@@ -1,12 +1,17 @@
 <script>
   import { spring } from 'svelte/motion';
 
-  import Calculator from './Calculator.svelte';
+  import Calculator from './lib/Calculator.svelte';
 
   const editorWidth = spring(200, {
     duration: 500,
     stiffness: 0.01,
     damping: 0.2,
+  });
+
+  let myEditorWidth;
+  editorWidth.subscribe((newEditorWidth) => {
+    myEditorWidth = newEditorWidth;
   });
 </script>
 
@@ -25,7 +30,7 @@
       }}
     />
     <div class="widthindicator" style="width:{$editorWidth}px;">
-      Width indicator
+      Width: {myEditorWidth} ({$editorWidth})
     </div>
   </div>
 
@@ -54,5 +59,20 @@
     border: 2px solid blue;
     padding: 2px;
     font-size: small;
+  }
+
+  :global(body) {
+    font-family: sans-serif;
+  }
+
+  :global(input) {
+    font-family: inherit;
+    font-size: inherit;
+    -webkit-padding: 0.4em 0;
+    padding: 0.4em;
+    margin: 0 0 0.5em 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 2px;
   }
 </style>

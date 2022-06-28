@@ -1,10 +1,10 @@
 <script>
   import { fade, scale } from 'svelte/transition';
 
-  import Button from './Button.svelte';
-  import TippyUse from './TippyUse.svelte';
-  import TippyLifecycle from './TippyLifecycle.svelte';
-  import SearchField from './SearchField.svelte';
+  import Button from './lib/Button.svelte';
+  import TippyUse from './lib/TippyUse.svelte';
+  import TippyLifecycle from './lib/TippyLifecycle.svelte';
+  import SearchField from './lib/SearchField.svelte';
 
   let search1Result = '';
   const search1 = ({ detail: { text } }) => {
@@ -173,5 +173,34 @@
   }
   .type3 {
     color: blue;
+  }
+
+  /* Some global styles here - just to illustrate */
+  :global(body) {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  :global(input),
+  :global(button) {
+    font-family: inherit;
+    font-size: inherit;
+    -webkit-padding: 0.4em 0;
+    padding: 0.4em;
+    margin: 0 0 0.5em 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+  }
+
+  :global(button) {
+    color: #333;
+    background-color: #f4f4f4;
+    outline: none;
   }
 </style>
