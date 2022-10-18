@@ -25,6 +25,18 @@
 			<li class:active={$page.url.pathname.startsWith('/sverdle')}>
 				<a href="/sverdle">Sverdle</a>
 			</li>
+			<li class:active={$page.url.pathname === '/oli-1'}>
+				<a href="/oli-1">Oli 1</a>
+			</li>
+			<li class:active={$page.url.pathname === '/oli-42'}>
+				<a href="/oli-42">Oli 42</a>
+			</li>
+			<li class:active={$page.url.pathname === '/hifi'}>
+				<a href="/hifi">HiFi</a>
+			</li>
+			<li class:active={$page.url.pathname === '/hifi-server'}>
+				<a href="/hifi-server">HiFi Server</a>
+			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
