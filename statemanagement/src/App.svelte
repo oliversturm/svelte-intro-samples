@@ -4,9 +4,8 @@
   import Calculator from './lib/Calculator.svelte';
 
   const editorWidth = spring(200, {
-    duration: 500,
-    stiffness: 0.01,
-    damping: 0.2,
+    stiffness: 0.1,
+    damping: 0.05,
   });
 </script>
 
