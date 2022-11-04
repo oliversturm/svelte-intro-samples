@@ -1,7 +1,8 @@
 @(
   'images' 
   'morecomponents' 
-  'statemanagement' 
+  'state-and-props'
+  'statemanagement'
   'sveltekit-start' 
   'sveltekit-final'
 ) | % { Push-Location $_; pnpm install; Pop-Location }
